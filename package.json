@@ -1,0 +1,62 @@
+{
+  "name": "zk-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@fontsource/roboto": "^4.5.8",
+    "@headlessui/react": "^1.7.13",
+    "@metamask/providers": "^10.2.1",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.13",
+    "@mui/styled-engine-sc": "^5.11.11",
+    "@puzzlehq/sdk": "link:/Users/darvishkamalia/Desktop/puzzle-sdk",
+    "@tanstack/react-query": "^4.29.19",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.16",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@walletconnect/modal-sign-react": "^2.5.9",
+    "buffer": "^6.0.3",
+    "ethers": "^6.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0",
+    "rollup-plugin-polyfill-node": "^0.12.0",
+    "styled-components": "^5.3.9",
+    "typescript": "^4.9.5",
+    "vite-plugin-live-reload": "^3.0.2"
+  },
+  "scripts": {
+    "dev-testnet": "vite --port 3332 --mode testnet",
+    "dev-mainnet": "vite --port 3332 --mode mainnet",
+    "dev-localnet": "vite --port 3332 --mode localnet",
+    "lint": "eslint *.ts*"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+    "@types/ua-parser-js": "^0.7.36",
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.3.9",
+    "vite-plugin-svgr": "^3.2.0",
+    "vite-tsconfig-paths": "^4.2.0"
+  }
+}
