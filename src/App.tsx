@@ -1,4 +1,3 @@
-import './App.css';
 import {
   AppBar,
   Box,
@@ -11,15 +10,12 @@ import {
   createTheme,
 } from '@mui/material';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import Transfer from './components/Transfer/Transfer.js';
-import RootProvider from './providers/root.jsx';
-
+import Transfer from './components/Transfer.tsx';
 import {
   usePuzzleAccount,
   usePuzzleWallet,
   usePuzzleConnect,
 } from '@puzzlehq/sdk';
-
 import { PuzzleWeb3Modal } from '@puzzlehq/sdk';
 
 function App() {
@@ -45,7 +41,7 @@ function App() {
                   sx={{ flexGrow: 1 }}
                   style={{ fontSize: '1.7rem', marginLeft: 70 }}
                 >
-                  Aleo Demo
+                  Aleo Starter
                 </Typography>
                 <Button
                   onClick={async () => {

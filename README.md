@@ -1,5 +1,3 @@
-# Getting Started with Create React App
-
 ## Getting started 
 
-Run `pnpm i && pnpm run dev-localnet` to start the app 
+Run `pnpm i && pnpm dev` to start the development server.
