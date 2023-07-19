@@ -23,8 +23,8 @@ dependencies:
     specifier: ^5.11.11
     version: 5.12.0(styled-components@5.3.11)
   '@puzzlehq/sdk':
-    specifier: ^0.0.5
-    version: 0.0.5(react-dom@18.2.0)
+    specifier: ^0.0.24
+    version: 0.0.24(react-dom@18.2.0)
   '@types/node':
     specifier: ^16.18.16
     version: 16.18.38
@@ -1122,8 +1122,8 @@ packages:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
     dev: false
 
-  /@puzzlehq/sdk@0.0.5(react-dom@18.2.0):
-    resolution: {integrity: sha512-lLeoyiV/eEwwz6+sEVMFjg9cUi5SukQU/MXA0fYkKPIohBX8FN9P4pD8FS4Vmqp7bO3gMta/t7s4DHGqJXyuWA==}
+  /@puzzlehq/sdk@0.0.24(react-dom@18.2.0):
+    resolution: {integrity: sha512-pJ0UvsmInmOHjE2klwgoG1eDwX3EqoZ88MahO9KFOKLGfS96SSqboHJZtUhI2ef/QfYxn1RsviONLJ48EyVxow==}
     dependencies:
       '@extend-chrome/messages': 1.2.2
       '@tanstack/react-query': 4.29.19(react-dom@18.2.0)(react@18.2.0)
@@ -1132,13 +1132,15 @@ packages:
       '@trpc/server': 10.34.0
       '@walletconnect/core': 2.9.0
       '@walletconnect/jsonrpc-types': 1.0.3
-      '@walletconnect/modal-sign-react': 2.5.9(react-dom@18.2.0)(react@18.2.0)
+      '@walletconnect/modal-sign-react': 2.6.0(react-dom@18.2.0)(react@18.2.0)
       '@walletconnect/sign-client': 2.9.0
       '@walletconnect/types': 2.9.0
       '@walletconnect/utils': 2.9.0
       '@walletconnect/web3wallet': 1.8.6
       immer: 9.0.21
+      localforage: 1.10.0
       react: 18.2.0
+      rxjs: 7.8.1
       superjson: 1.12.4
       tslib: 2.6.0
       zustand: 4.3.9(immer@9.0.21)(react@18.2.0)
@@ -1738,11 +1740,32 @@ packages:
       - react
     dev: false
 
+  /@walletconnect/modal-core@2.6.0(react@18.2.0):
+    resolution: {integrity: sha512-95315iaiVlz72W8IWd0gvBGHenS9cbLXwURjbN6wm12KSc6zbQA6u2RO0SRlcwc+dQcNzhwB/ce7TZYLQUVMfw==}
+    dependencies:
+      valtio: 1.10.7(react@18.2.0)
+    transitivePeerDependencies:
+      - react
+    dev: false
+
   /@walletconnect/modal-sign-html@2.5.9(react@18.2.0):
     resolution: {integrity: sha512-/gkoHlFaTFuDqCRJwvjaXOW4rbUcjyMzbMJsgqT5/6o6rz333LR3D/wtSCQnTra7OV9I1GJfhHgu/hIv+pXEJQ==}
     dependencies:
       '@walletconnect/modal': 2.5.9(react@18.2.0)
       '@walletconnect/sign-client': 2.8.6
+    transitivePeerDependencies:
+      - '@react-native-async-storage/async-storage'
+      - bufferutil
+      - lokijs
+      - react
+      - utf-8-validate
+    dev: false
+
+  /@walletconnect/modal-sign-html@2.6.0(react@18.2.0):
+    resolution: {integrity: sha512-KDJCopBJd6NGoy04SyP8Vwk/DpmFKIdXeBx4AJEZgeUm4pyJMxPwfmcQqHvvZ1DAUHU42+KqeUEgZ0rG51pmAg==}
+    dependencies:
+      '@walletconnect/modal': 2.6.0(react@18.2.0)
+      '@walletconnect/sign-client': 2.9.0
     transitivePeerDependencies:
       - '@react-native-async-storage/async-storage'
       - bufferutil
@@ -1768,6 +1791,23 @@ packages:
       - utf-8-validate
     dev: false
 
+  /@walletconnect/modal-sign-react@2.6.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-5Sghm7/QB93X+aUjuU0GoDyUuZTEveSXeEVIurqQsfhpwU0QzFozrKd9i4kfTZQZsnubZ9j5uddMNX7xFlbkqQ==}
+    peerDependencies:
+      react: '>=17'
+      react-dom: '>=17'
+    dependencies:
+      '@walletconnect/modal-sign-html': 2.6.0(react@18.2.0)
+      mitt: 3.0.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - '@react-native-async-storage/async-storage'
+      - bufferutil
+      - lokijs
+      - utf-8-validate
+    dev: false
+
   /@walletconnect/modal-ui@2.5.9(react@18.2.0):
     resolution: {integrity: sha512-nfBaAT9Ls7RZTBBgAq+Nt/3AoUcinIJ9bcq5UHXTV3lOPu/qCKmUC/0HY3GvUK8ykabUAsjr0OAGmcqkB91qug==}
     dependencies:
@@ -1779,11 +1819,31 @@ packages:
       - react
     dev: false
 
+  /@walletconnect/modal-ui@2.6.0(react@18.2.0):
+    resolution: {integrity: sha512-A9Eohricm+VYTiUELVfum7AjyhxquWqy8ZhyVWXfm2ucpHnG0lhiY2mdLrqoE9EEW/ql4tmfYltX2ZD9wzTu9A==}
+    dependencies:
+      '@walletconnect/modal-core': 2.6.0(react@18.2.0)
+      lit: 2.7.6
+      motion: 10.16.2
+      qrcode: 1.5.3
+    transitivePeerDependencies:
+      - react
+    dev: false
+
   /@walletconnect/modal@2.5.9(react@18.2.0):
     resolution: {integrity: sha512-Zs2RvPwbBNRdBhb50FuJCxi3FJltt1KSpI7odjU/x9GTpTOcSOkmR66PBCy2JvNA0+ztnS1Xs0LVEr3lu7/Jzw==}
     dependencies:
       '@walletconnect/modal-core': 2.5.9(react@18.2.0)
       '@walletconnect/modal-ui': 2.5.9(react@18.2.0)
+    transitivePeerDependencies:
+      - react
+    dev: false
+
+  /@walletconnect/modal@2.6.0(react@18.2.0):
+    resolution: {integrity: sha512-hV8pfWvUDjanxfXZ7DouyboM+LOcSsJBX3cMsDyNwe0f19W/yIZTUQz9k4DkuIGjEQSUO9zfEX+BAYAeP27uag==}
+    dependencies:
+      '@walletconnect/modal-core': 2.6.0(react@18.2.0)
+      '@walletconnect/modal-ui': 2.6.0(react@18.2.0)
     transitivePeerDependencies:
       - react
     dev: false
@@ -2435,6 +2495,10 @@ packages:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
     dev: false
 
+  /immediate@3.0.6:
+    resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
+    dev: false
+
   /immer@9.0.21:
     resolution: {integrity: sha512-bc4NBHqOqSfRW7POMkHd51LvClaeMXpm8dx0e8oE2GORbq5aRK7Bxl4FyzVLdGtLmvLKL7BTDBG5ACQm4HWjTA==}
     dev: false
@@ -2533,6 +2597,12 @@ packages:
     resolution: {integrity: sha512-8t6Q3TclQ4uZynJY9IGr2+SsIGwK9JHcO6ootkHCGA0CrQCRy+VkouYNO2xicET6b9al7QKzpebNow+gkpCL8g==}
     dev: false
 
+  /lie@3.1.1:
+    resolution: {integrity: sha512-RiNhHysUjhrDQntfYSfY4MU24coXXdEOgw9WGcKHNeEwffDYbF//u87M1EWaMGzuFoSbqW0C9C6lEEhDOAswfw==}
+    dependencies:
+      immediate: 3.0.6
+    dev: false
+
   /lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
@@ -2556,6 +2626,20 @@ packages:
       '@lit/reactive-element': 1.6.2
       lit-element: 3.3.2
       lit-html: 2.7.5
+    dev: false
+
+  /lit@2.7.6:
+    resolution: {integrity: sha512-1amFHA7t4VaaDe+vdQejSVBklwtH9svGoG6/dZi9JhxtJBBlqY5D1RV7iLUYY0trCqQc4NfhYYZilZiVHt7Hxg==}
+    dependencies:
+      '@lit/reactive-element': 1.6.2
+      lit-element: 3.3.2
+      lit-html: 2.7.5
+    dev: false
+
+  /localforage@1.10.0:
+    resolution: {integrity: sha512-14/H1aX7hzBBmmh7sGPd+AOMkkIrHM3Z1PAyGgZigA1H1p5O5ANnMyWzvpAETtG68/dC4pC0ncy3+PPGzXZHPg==}
+    dependencies:
+      lie: 3.1.1
     dev: false
 
   /locate-path@5.0.0:
@@ -2608,6 +2692,10 @@ packages:
 
   /mitt@3.0.0:
     resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==}
+    dev: false
+
+  /mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
     dev: false
 
   /motion@10.16.2:
@@ -3188,6 +3276,20 @@ packages:
 
   /valtio@1.10.6(react@18.2.0):
     resolution: {integrity: sha512-SxN1bHUmdhW6V8qsQTpCgJEwp7uHbntuH0S9cdLQtiohuevwBksbpXjwj5uDMA7bLwg1WKyq9sEpZrx3TIMrkA==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      react: '>=16.8'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      proxy-compare: 2.5.1
+      react: 18.2.0
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
+
+  /valtio@1.10.7(react@18.2.0):
+    resolution: {integrity: sha512-XUwXJ9twXqwfVhXlcbYlCcRUUSOmp8RcJODVAxPrUZc2jh3com13B49MOL/cbgcTOX+5yf7wdMqbFGR7ba2sPg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       react: '>=16.8'
