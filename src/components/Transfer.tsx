@@ -26,15 +26,10 @@ export const fetchWithTimeout = async (resource: string, options: any = {}) => {
 const Transfer = () => {
   const [toAddress, setToAddress] = useState('');
   const [newPk, setNewPk] = useState('');
-  // TODO: Abstract out transferRecord and feeRecord, in the background can probably query beacon and get the records directly....
   const [transferAmount, setTransferAmount] = useState('');
   const [transferRecord, setTransferRecord] = useState('');
   const [feeRecord, setFeeRecord] = useState('');
   const [feeAmount, setFeeAmount] = useState('');
-  // const [address, setAddress] = useState("");
-  // const [recordToTransfer, setRecordToTransfer] = useState("");
-  // const [viewKey, setViewKey] = useState("");
-  // const [ciphertext, setCiphertext] = useState("");
 
   const sendCredits = async () => {
     try {
