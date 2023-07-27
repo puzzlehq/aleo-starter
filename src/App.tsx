@@ -10,23 +10,25 @@ import {
   createTheme,
 } from '@mui/material';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import Transfer from './components/Transfer.tsx';
 import {
-  usePuzzleAccount,
-  usePuzzleWallet,
-  usePuzzleConnect,
+  useAccount,
+  useConnect,
+  useBalance,
+  useExecuteProgram,
+  PuzzleWalletProvider,
 } from '@puzzlehq/sdk';
 import { PuzzleWeb3Modal } from '@puzzlehq/sdk';
 
 function App() {
   const mdTheme = createTheme();
   const navigate = useNavigate();
-  const { connect, data, error, loading } = usePuzzleConnect();
-  const { addSession } = usePuzzleWallet();
-  const { account } = usePuzzleAccount();
+  const { connect, data, error, loading } = useConnect();
+  const { account } = useAccount();
+  const { balance } = useBalance(); 
 
   return (
     <>
+    <PuzzleWalletProvider>
       <ThemeProvider theme={mdTheme}>
         {
           <Box sx={{ display: 'flex' }}>
@@ -45,8 +47,7 @@ function App() {
                 </Typography>
                 <Button
                   onClick={async () => {
-                    const data = await connect();
-                    addSession(data);
+                    await connect();
                   }}
                   style={{
                     display: 'flex',
@@ -71,16 +72,22 @@ function App() {
             >
               <Toolbar />
               <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
-                <Routes>
-                  <Route path='/' element={<Transfer />} />
-                </Routes>
+                <Typography>
+                  Balance: {balance}
+                </Typography>
               </Container>
             </Box>
           </Box>
         }
       </ThemeProvider>
-      <PuzzleWeb3Modal />
-    </>
+      </PuzzleWalletProvider>
+      <PuzzleWeb3Modal
+      dAppName='Puzzle Starter app'
+      dAppDescription="Let's Puzzle!"
+      dAppUrl='http://localhost:5173'
+      dAppIconURL='https://walletconnect.puzzle.online/assets/logo_white-b85ba17c.png'
+       />
+      </>
   );
 }
 
