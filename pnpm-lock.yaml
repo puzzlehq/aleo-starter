@@ -23,8 +23,8 @@ dependencies:
     specifier: ^5.11.11
     version: 5.12.0(styled-components@5.3.11)
   '@puzzlehq/sdk':
-    specifier: 0.0.63
-    version: 0.0.63(react-dom@18.2.0)
+    specifier: 0.0.66
+    version: 0.0.66(react-dom@18.2.0)
   '@types/node':
     specifier: ^16.18.16
     version: 16.18.38
@@ -1016,8 +1016,8 @@ packages:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
     dev: false
 
-  /@puzzlehq/sdk@0.0.63(react-dom@18.2.0):
-    resolution: {integrity: sha512-mkw9Bjt2nMWgWjYNqaX166+k2VI95A5LNz3GFqMhVNl+EZF7JHbj86lRFVbZlNNPLqfjf/QiI4JQiB/Or0bnxA==}
+  /@puzzlehq/sdk@0.0.66(react-dom@18.2.0):
+    resolution: {integrity: sha512-SI4P2wrKzwjoqCdChFjrQofzVgvx33+9CzKPWPJZhd0D0WSIVoy/x3/jxnNzwaf+/KqIQ4t+/XroqOi3MMzxUg==}
     dependencies:
       '@aleohq/sdk': 0.5.1
       '@extend-chrome/messages': 1.2.2
@@ -1026,7 +1026,7 @@ packages:
       '@trpc/react-query': 10.34.0(@tanstack/react-query@4.29.19)(@trpc/client@10.34.0)(@trpc/server@10.34.0)(react-dom@18.2.0)(react@18.2.0)
       '@trpc/server': 10.34.0
       '@walletconnect/modal-sign-react': 2.6.1(react-dom@18.2.0)(react@18.2.0)
-      '@walletconnect/types': 2.9.0
+      '@walletconnect/types': 2.9.1
       immer: 9.0.21
       localforage: 1.10.0
       react: 18.2.0
@@ -1783,20 +1783,6 @@ packages:
 
   /@walletconnect/types@2.8.6:
     resolution: {integrity: sha512-Z/PFa3W1XdxeTcCtdR6lUsFgZfU/69wWJBPyclPwn7cu1+eriuCr6XZXQpJjib3flU+HnwHiXeUuqZaheehPxw==}
-    dependencies:
-      '@walletconnect/events': 1.0.1
-      '@walletconnect/heartbeat': 1.2.1
-      '@walletconnect/jsonrpc-types': 1.0.3
-      '@walletconnect/keyvaluestorage': 1.0.2
-      '@walletconnect/logger': 2.0.1
-      events: 3.3.0
-    transitivePeerDependencies:
-      - '@react-native-async-storage/async-storage'
-      - lokijs
-    dev: false
-
-  /@walletconnect/types@2.9.0:
-    resolution: {integrity: sha512-ORopsMfSRvUYqtjKKd6scfg8o4/aGebipLxx92AuuUgMTERSU6cGmIrK6rdLu7W6FBJkmngPLEGc9mRqAb9Lug==}
     dependencies:
       '@walletconnect/events': 1.0.1
       '@walletconnect/heartbeat': 1.2.1
