@@ -41,7 +41,9 @@ function App() {
   } = useExecuteProgram({
     programId: "puzzlecalculator.aleo", 
     functionName: operation, 
-    inputs: firstNumber + " " + secondNumber,
+    // Aleo program inputs need their types specified, our program takes in 32 bit integers
+    // so the inputs should look like "2i32 3i32"
+    inputs: firstNumber + "i32 " + secondNumber + "i32",
   });
   
   const handleSubmit = (event) => {
@@ -132,7 +134,7 @@ function App() {
                     </select>
                     <input type="submit" />
                     <Typography>Result</Typography>
-                    <Typography> {!outputPrivate ? "Loading" : outputPrivate} </Typography>
+                    <Typography> {!outputPrivate || loading ? "Loading" : outputPrivate.replace("i32", "")} </Typography>
                     </Stack>
                   </form>
                 </Container>
