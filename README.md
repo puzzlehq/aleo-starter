@@ -1,6 +1,7 @@
 ## Getting started 
 
-Install the Puzzle wallet from [Itero](https://itero.plasmo.com/ext/nhohlebgfennhnakfdbidhminlmkbold)
+<!-- Install the Puzzle wallet from [Itero](https://itero.plasmo.com/ext/nhohlebgfennhnakfdbidhminlmkbold) -->
+Install the Puzzle wallet from the `dist.zip` provided in Slack.
 
 Clone this repo and run `pnpm i && pnpm dev` to run the demo 
 
