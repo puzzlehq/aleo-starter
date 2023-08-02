@@ -10,7 +10,6 @@ import {
   createTheme,
   Stack,
 } from '@mui/material';
-import { Route, Routes, useNavigate } from 'react-router-dom';
 import {
   useAccount,
   useConnect,
@@ -22,12 +21,11 @@ import { useState } from 'react';
 
 function App() {
   const mdTheme = createTheme();
-  const navigate = useNavigate();
   const { connect } = useConnect();
   const { account } = useAccount();
   const [firstNumber, setFirstNumber] = useState("");
   const [secondNumber, setSecondNumber] = useState(""); 
-  const [operation, setOperation] = useState(""); 
+  const [operation, setOperation] = useState("addition"); 
 
   const {
     execute,
@@ -46,7 +44,7 @@ function App() {
     inputs: firstNumber + "i32 " + secondNumber + "i32",
   });
   
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     // Read the form data
     const form = event.target;
@@ -104,37 +102,36 @@ function App() {
                 <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
                   <form onSubmit={handleSubmit}>
                     <Stack>
-                    <label>Enter first number 
-                      <input
-                        type="text"
-                        value={firstNumber}
-                        onChange={(e) => setFirstNumber(e.target.value)}
-                      />
-                    </label>
-                    <label>Enter second number  
-                      <input
-                        type="text"
-                        value={secondNumber}
-                        onChange={(e) => setSecondNumber(e.target.value)}
-                      />
-                    </label>
-                    <select name="operation" defaultValue="addition">
-                      <option 
-                        value="addition"
-                        >Add</option>
-                        <option 
-                        value="subtract"
-                        >Subtract</option>
-                        <option 
-                        value="multiply"
-                        >Multiply</option>
-                        <option 
-                        value="divide"
-                        >Divide</option>
-                    </select>
-                    <input type="submit" />
-                    <Typography>Result</Typography>
-                    <Typography> {!outputPrivate || loading ? "Loading" : outputPrivate.replace("i32", "")} </Typography>
+                      <label>Enter first number 
+                        <input
+                          type="text"
+                          value={firstNumber}
+                          onChange={(e) => setFirstNumber(e.target.value)}
+                        />
+                      </label>
+                      <label>Enter second number  
+                        <input
+                          type="text"
+                          value={secondNumber}
+                          onChange={(e) => setSecondNumber(e.target.value)}
+                        />
+                      </label>
+                      <select
+                        name="operation"
+                        defaultValue="addition"
+                        onChange={e => setOperation(e.target.value)}>
+                        <option value="addition">Add</option>
+                          <option value="subtract">Subtract</option>
+                          <option value="multiply">Multiply</option>
+                          <option value="divide">Divide</option>
+                      </select>
+                      <input type="submit" />
+                      { loading && (
+                        <Typography>Loading...</Typography>
+                      )}
+                      { outputPrivate && (
+                        <Typography>{ "Result:" + outputPrivate.replace("i32", "") }</Typography>
+                      )}
                     </Stack>
                   </form>
                 </Container>
