@@ -15,6 +15,7 @@ import {
   useConnect,
   useExecuteProgram,
   PuzzleWalletProvider,
+  useDecrypt,
 } from '@puzzlehq/sdk';
 import { PuzzleWeb3Modal } from '@puzzlehq/sdk';
 import { useState } from 'react';
@@ -31,17 +32,14 @@ function App() {
     execute,
     loading,
     transactionId,
-    outputPrivate,
-    outputRecords,
-    outputPublic,
-    outputConstant,
+    transitions,
     error,
   } = useExecuteProgram({
     programId: "puzzlecalculator.aleo", 
     functionName: operation, 
     // Aleo program inputs need their types specified, our program takes in 32 bit integers
     // so the inputs should look like "2i32 3i32"
-    inputs: firstNumber + "i32 " + secondNumber + "i32",
+    inputs: [firstNumber + "i32", secondNumber + "i32"],
   });
   
   const handleSubmit = (event: any) => {
@@ -129,8 +127,8 @@ function App() {
                       { loading && (
                         <Typography>Loading...</Typography>
                       )}
-                      { outputPrivate && (
-                        <Typography>{ "Result:" + outputPrivate.replace("i32", "") }</Typography>
+                      { transitions && (
+                        <Typography>{ "Result:" + transitions[0].outputs.outputPrivate[0].replace("i32", "") }</Typography>
                       )}
                     </Stack>
                   </form>

@@ -27,8 +27,8 @@ dependencies:
     specifier: ^5.11.11
     version: 5.12.0(styled-components@5.3.11)
   '@puzzlehq/sdk':
-    specifier: 0.0.70
-    version: 0.0.70(react-dom@18.2.0)
+    specifier: 0.0.79
+    version: 0.0.79(react-dom@18.2.0)
   '@types/node':
     specifier: ^16.18.16
     version: 16.18.38
@@ -95,11 +95,11 @@ packages:
     resolution: {integrity: sha512-Sws/KogKEpJpKQKVyle2n08n5D+gaFXiXAwODZe8CdtKTfNkxSgu5WpvokuMw5HCMrFiRGNoeu+ChsKBamoYNQ==}
     dev: false
 
-  /@aleohq/sdk@0.5.1:
+  /@aleohq/sdk@0.5.1(debug@4.3.4):
     resolution: {integrity: sha512-c26rbY6MGX5yHwehzZS372v2xZL+Xz4K1YrbkncmF30RJ+IsxiDgAXk4dlX6/DtH077eAIuhTre73ao8fTqyGQ==}
     dependencies:
       '@aleohq/nodejs': 0.5.1
-      axios: 1.4.0
+      axios: 1.4.0(debug@4.3.4)
       jsdoc: 3.6.11
       unfetch: 5.0.0
     transitivePeerDependencies:
@@ -996,17 +996,20 @@ packages:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
     dev: false
 
-  /@puzzlehq/sdk@0.0.70(react-dom@18.2.0):
-    resolution: {integrity: sha512-FezWH7x0gVAuQJeeWC0+dMLVu+MMD6frA5eNGnZg4Hrhv9jAVifbYBA5hPmALhb8952jzgKLHiB4NWSEiyLIOA==}
+  /@puzzlehq/sdk@0.0.79(react-dom@18.2.0):
+    resolution: {integrity: sha512-1u7UpoPuf+t1bThYYDNafVHgVCfKbwokRCxJJupeZdghYOYO5sQyUVGrlqZ8VN7Vr7R/S8LNmltLGNf/++l0gg==}
     dependencies:
-      '@aleohq/sdk': 0.5.1
+      '@aleohq/sdk': 0.5.1(debug@4.3.4)
       '@extend-chrome/messages': 1.2.2
       '@tanstack/react-query': 4.29.19(react-dom@18.2.0)(react@18.2.0)
       '@trpc/client': 10.34.0(@trpc/server@10.34.0)
       '@trpc/react-query': 10.34.0(@tanstack/react-query@4.29.19)(@trpc/client@10.34.0)(@trpc/server@10.34.0)(react-dom@18.2.0)(react@18.2.0)
       '@trpc/server': 10.34.0
+      '@types/debug': 4.1.8
       '@walletconnect/modal-sign-react': 2.6.1(react-dom@18.2.0)(react@18.2.0)
       '@walletconnect/types': 2.9.1
+      '@walletconnect/utils': 2.9.1
+      debug: 4.3.4(supports-color@5.5.0)
       immer: 9.0.21
       localforage: 1.10.0
       react: 18.2.0
@@ -1017,10 +1020,10 @@ packages:
     transitivePeerDependencies:
       - '@react-native-async-storage/async-storage'
       - bufferutil
-      - debug
       - lokijs
       - react-dom
       - react-native
+      - supports-color
       - utf-8-validate
     dev: false
 
@@ -1351,6 +1354,12 @@ packages:
       '@types/filesystem': 0.0.32
     dev: false
 
+  /@types/debug@4.1.8:
+    resolution: {integrity: sha512-/vPO1EPOs306Cvhwv7KfVfYvOJqA/S/AXjaHQiJboCZzcNDb+TIJFN9/2C9DZ//ijSKWioNyUxD792QmDJ+HKQ==}
+    dependencies:
+      '@types/ms': 0.7.31
+    dev: false
+
   /@types/estree@1.0.1:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
 
@@ -1377,6 +1386,10 @@ packages:
 
   /@types/mdurl@1.0.2:
     resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
+    dev: false
+
+  /@types/ms@0.7.31:
+    resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: false
 
   /@types/node@13.13.52:
@@ -1886,10 +1899,10 @@ packages:
     engines: {node: '>=8.0.0'}
     dev: false
 
-  /axios@1.4.0:
+  /axios@1.4.0(debug@4.3.4):
     resolution: {integrity: sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==}
     dependencies:
-      follow-redirects: 1.15.2
+      follow-redirects: 1.15.2(debug@4.3.4)
       form-data: 4.0.0
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -2269,7 +2282,7 @@ packages:
       path-exists: 4.0.0
     dev: false
 
-  /follow-redirects@1.15.2:
+  /follow-redirects@1.15.2(debug@4.3.4):
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
     engines: {node: '>=4.0'}
     peerDependencies:
@@ -2277,6 +2290,8 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
+    dependencies:
+      debug: 4.3.4(supports-color@5.5.0)
     dev: false
 
   /form-data@4.0.0:
